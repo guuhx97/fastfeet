@@ -7,10 +7,6 @@
     "dev": "nodemon src/server.js",
     "dev:debug": "nodemon --inspect src/server.js"
   },
-  "dependencies": {
-    "express": "^4.17.1",
-    "sequelize": "^5.21.3"
-  },
   "devDependencies": {
     "eslint": "^6.8.0",
     "eslint-config-airbnb-base": "^14.0.0",
@@ -19,6 +15,11 @@
     "eslint-plugin-prettier": "^3.1.2",
     "nodemon": "^2.0.2",
     "prettier": "^1.19.1",
+    "sequelize-cli": "^5.5.1",
     "sucrase": "^3.12.1"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "sequelize": "^5.21.3"
   }
 }
