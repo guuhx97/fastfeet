@@ -10,7 +10,9 @@ const routes = new Router();
 routes.post('/sessions', SessionController.store);
 
 routes.use(authConfig);
+routes.get('/recipient', RecipientController.show);
 routes.post('/recipient', RecipientController.store);
-routes.put('/recipient', RecipientController.update);
+routes.put('/recipient/:id', RecipientController.update);
+routes.delete('/recipient/:id', RecipientController.delete);
 
 export default routes;
