@@ -8,4 +8,6 @@
 
 # :memo: Menu
 
-[Phase One](Challenge01/)
+- [Phase One](Challenge01/)
+
+- [Phase Two](Challenge02/)
