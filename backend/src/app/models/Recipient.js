@@ -17,6 +17,7 @@ class Recipient extends Model {
         tableName: 'recipients',
       }
     );
+    return this;
   }
 }
 

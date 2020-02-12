@@ -4,28 +4,38 @@ import Deliveryman from '../models/Deliveryman';
 
 class DeliverymanController {
   async index(req, res) {
-    const deliverymans = Deliveryman.findAll();
+    const deliverymans = await Deliveryman.findAll();
     return res.json(deliverymans);
   }
 
-  async show(req, res) {
+  async store(req, res) {
     const schema = Yup.object().shape({
-      id: Yup.number()
-        .positive()
+      name: Yup.string().required(),
+      email: Yup.string()
+        .email()
         .required(),
     });
 
-    if (!(await schema.isValid(req.params))) {
-      return res.status(400).json({ error: 'Valid is fails' });
+    if (!(await schema.isValid(req.body))) {
+      return res.status(401).json({ error: ' Validation is Fails' });
     }
-    const { id } = req.params;
-    const deliveryman = Deliveryman.findOne({ where: id });
-    return res.json(deliveryman);
+
+    const deliverymanExist = await Deliveryman.findOne({
+      where: { email: req.body.email },
+    });
+
+    if (deliverymanExist) {
+      return res.status(400).json({ error: 'User alright exists' });
+    }
+
+    const { name, email } = await Deliveryman.create(req.body);
+
+    return res.json({ name, email });
   }
 
-  async store(req, res) {}
-
-  async update(req, res) {}
+  async update(req, res) {
+    return res.json({ error: true });
+  }
 
   async delete(req, res) {
     const schema = Yup.object().shape({
@@ -35,7 +45,7 @@ class DeliverymanController {
     });
 
     if (!(await schema.isValid(req.params))) {
-      return res.status(400).json({ error: 'Valid is fails' });
+      return res.status(401).json({ error: 'Valid is fails' });
     }
 
     const { id } = req.params;
