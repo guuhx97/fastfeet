@@ -8,6 +8,10 @@
 
 # :memo: Menu
 
-- [Phase One](Challenge01/)
+- [Phase One](Challenge01/) :white_check_mark:
 
-- [Phase Two](Challenge02/)
+- [Phase Two](Challenge02/) :repeat:
+
+- [Phase Three](Challenge03/) :interrobang:
+
+- [Phase Four](Challenge04/) :interrobang:
