@@ -3,7 +3,7 @@
 </h1>
 
 <h4 align="center">
-  Final Challenge Bootcamp 10.0 by Rocketseat
+  Final Challenge Bootcamp 10.0 by Rocketseat :memo:
 </h4>
 
 # :memo: Menu
