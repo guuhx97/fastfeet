@@ -57,17 +57,16 @@ class DeliverymanController {
 
     const deliveryman = await Deliveryman.findByPk(req.params.id);
 
-    const { email } = req.body.email;
+    const { email } = req.body;
 
     if (email && email !== deliveryman.email) {
       const deliverymanExist = await Deliveryman.findOne({ where: { email } });
-
       if (deliverymanExist) {
         return res.status(400).json({ error: 'User already exists' });
       }
     }
-
-    const { id, name, avatar_id } = Deliveryman.update(req.body);
+    console.log('Chegou aqui');
+    const { id, name, avatar_id } = await deliveryman.update(req.body);
 
     return res.json({ id, name, email, avatar_id });
   }
