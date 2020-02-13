@@ -10,11 +10,14 @@ import DeliveryController from './app/controllers/DeliveryController';
 import FileController from './app/controllers/FileController';
 
 import authConfig from './app/middlewares/auth';
+import StatusController from './app/controllers/StatusController';
 
 const routes = new Router();
 const upload = multer(multerConfig);
 
 routes.post('/sessions', SessionController.store);
+
+routes.post('/deliveryman/:id/deliveries', StatusController.index);
 
 routes.use(authConfig);
 
@@ -32,6 +35,8 @@ routes.get('/delivery', DeliveryController.index);
 routes.post('/delivery', DeliveryController.store);
 routes.put('/delivery/:id', DeliveryController.update);
 routes.delete('/delivery/:id', DeliveryController.delete);
+
+routes.put('/update/:id', StatusController.update);
 
 routes.post('/files', upload.single('file'), FileController.store);
 
