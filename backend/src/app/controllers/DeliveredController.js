@@ -9,7 +9,24 @@ import Deliveryman from '../models/Deliveryman';
 
 class DeliveredController {
   async index(req, res) {
-    return res.json({ ok: true });
+    const schema = Yup.object().shape({
+      id: Yup.number().required(),
+    });
+    if (!(await schema.isValid(req.params))) {
+      return res.status(400).json({ error: 'Validation is fail' });
+    }
+
+    const { id } = req.params;
+    const deliveries = await Delivery.findAll({
+      where: {
+        deliveryman_id: id,
+        end_date: {
+          [Op.ne]: null,
+        },
+        canceled_at: null,
+      },
+    });
+    return res.json(deliveries);
   }
 
   async update(req, res) {

@@ -20,14 +20,15 @@ routes.post('/sessions', SessionController.store);
 
 routes.post('/signature', upload.single('file'), FileController.store);
 
-routes.get('/deliveryman/:id/deliveries', DeliveredController.index);
+routes.get('/delivered/deliveryman/:id/deliveries', DeliveredController.index);
 routes.put(
   '/delivered/deliveryman/:deliveryman_id/delivery/:delivery_id',
   DeliveredController.update
 );
 
+routes.get('withdrawn/deliveryman/:id/deliveries', WithdrawnController.index);
 routes.put(
-  '/withdraw/deliveryman/:deliveryman_id/delivery/:delivery_id',
+  '/withdrawn/deliveryman/:deliveryman_id/delivery/:delivery_id',
   WithdrawnController.update
 );
 

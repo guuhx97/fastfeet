@@ -15,6 +15,25 @@ import Delivery from '../models/Delivery';
 import Deliveryman from '../models/Deliveryman';
 
 class WithdrawnController {
+  async index(req, res) {
+    const schema = Yup.object().shape({
+      id: Yup.number().required(),
+    });
+    if (!(await schema.isValid(req.params))) {
+      return res.status(400).json({ error: 'Validation is fail' });
+    }
+
+    const { id } = req.params;
+    const deliveries = await Delivery.findAll({
+      where: {
+        deliveryman_id: id,
+        end_date: null,
+        canceled_at: null,
+      },
+    });
+    return res.json(deliveries);
+  }
+
   async update(req, res) {
     const schema = Yup.object().shape({
       start_date: Yup.date().required(),
