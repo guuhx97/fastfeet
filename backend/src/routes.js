@@ -10,29 +10,34 @@ import DeliveryController from './app/controllers/DeliveryController';
 import FileController from './app/controllers/FileController';
 
 import authConfig from './app/middlewares/auth';
-import WithdrawnController from './app/controllers/WithdrawnController';
-import DeliveredController from './app/controllers/DeliveredController';
+import WithdrawController from './app/controllers/WithdrawController';
+import CheckoutController from './app/controllers/CheckoutController';
+import DeliveryProblemController from './app/controllers/DeliveryProblemController';
 
 const routes = new Router();
 const upload = multer(multerConfig);
 
 routes.post('/sessions', SessionController.store);
-
 routes.post('/signature', upload.single('file'), FileController.store);
 
-routes.get('/delivered/deliveryman/:id/deliveries', DeliveredController.index);
+routes.get('/delivered/deliveryman/:id/checkout', CheckoutController.index);
 routes.put(
-  '/delivered/deliveryman/:deliveryman_id/delivery/:delivery_id',
-  DeliveredController.update
+  '/deliveryman/:deliveryman_id/delivery/:delivery_id/checkout',
+  CheckoutController.update
 );
 
-routes.get('withdrawn/deliveryman/:id/deliveries', WithdrawnController.index);
+routes.get('/deliveryman/:id/deliveries', WithdrawController.index);
 routes.put(
-  '/withdrawn/deliveryman/:deliveryman_id/delivery/:delivery_id',
-  WithdrawnController.update
+  '/deliveryman/:deliveryman_id/delivery/:delivery_id',
+  WithdrawController.update
 );
+
+routes.post('/delivery/:id/problems', DeliveryProblemController.store);
 
 routes.use(authConfig);
+
+routes.get('/delivery/:id/problems', DeliveryProblemController.index);
+routes.delete('/problem/:id/cancel-delivery', DeliveryProblemController.delete);
 
 routes.get('/recipient', RecipientController.show);
 routes.post('/recipient', RecipientController.store);

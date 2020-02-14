@@ -15,11 +15,10 @@ class DeliveredController {
     if (!(await schema.isValid(req.params))) {
       return res.status(400).json({ error: 'Validation is fail' });
     }
-
-    const { id } = req.params;
+    const { deliveryman_id } = req.params;
     const deliveries = await Delivery.findAll({
       where: {
-        deliveryman_id: id,
+        deliveryman_id,
         end_date: {
           [Op.ne]: null,
         },
