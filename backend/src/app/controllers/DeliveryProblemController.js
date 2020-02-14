@@ -11,15 +11,31 @@ import Queue from '../../lib/Queue';
 
 class DeliveryProblemController {
   async index(req, res) {
+    const arrayId = await DeliveryProblem.findAndCountAll();
+    return res.json(arrayId);
+  }
+
+  async show(req, res) {
     const schema = Yup.object().shape({
       id: Yup.number().required(),
     });
     if (!(await schema.isValid(req.params))) {
       return res.status(400).json({ error: 'Validation is fail' });
     }
+    const deliveryExists = await Delivery.findByPk(req.params.id);
 
+    if (!deliveryExists) {
+      return res.status(400).json({ error: 'Delivery does not exists' });
+    }
     const problems = await DeliveryProblem.findAll({
       where: { delivery_id: req.params.id },
+      include: [
+        {
+          model: Delivery,
+          as: 'delivery',
+          attributes: ['product', 'deliveryman_id', 'recipient_id'],
+        },
+      ],
     });
 
     return res.json(problems);

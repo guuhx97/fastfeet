@@ -36,7 +36,8 @@ routes.post('/delivery/:id/problems', DeliveryProblemController.store);
 
 routes.use(authConfig);
 
-routes.get('/delivery/:id/problems', DeliveryProblemController.index);
+routes.get('/delivery/problems', DeliveryProblemController.index);
+routes.get('/delivery/:id/problems', DeliveryProblemController.show);
 routes.delete('/problem/:id/cancel-delivery', DeliveryProblemController.delete);
 
 routes.get('/recipient', RecipientController.show);
