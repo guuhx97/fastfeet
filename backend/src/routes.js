@@ -18,11 +18,14 @@ const upload = multer(multerConfig);
 
 routes.post('/sessions', SessionController.store);
 
+routes.post('/signature', upload.single('file'), FileController.store);
+
 routes.get('/deliveryman/:id/deliveries', DeliveredController.index);
 routes.put(
-  '/delivered/deliveryman/:id/delivery/:id',
+  '/delivered/deliveryman/:deliveryman_id/delivery/:delivery_id',
   DeliveredController.update
 );
+
 routes.put(
   '/withdraw/deliveryman/:deliveryman_id/delivery/:delivery_id',
   WithdrawnController.update
