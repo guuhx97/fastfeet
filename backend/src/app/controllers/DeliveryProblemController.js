@@ -11,8 +11,25 @@ import Queue from '../../lib/Queue';
 
 class DeliveryProblemController {
   async index(req, res) {
-    const arrayId = await DeliveryProblem.findAndCountAll();
-    return res.json(arrayId);
+    const deliveriesProblems = await DeliveryProblem.findAll({
+      attributes: ['delivery_id'],
+      include: [
+        {
+          distinct: ['delivery_id'],
+          model: Delivery,
+          as: 'delivery',
+          attributes: ['product'],
+        },
+      ],
+    });
+
+    const newList = [];
+
+    deliveriesProblems.forEach(l => {
+      if (!newList.find(n => n.delivery_id === l.delivery_id)) newList.push(l);
+    });
+
+    return res.json(newList);
   }
 
   async show(req, res) {
