@@ -1,5 +1,5 @@
 <h1 align="center">
-  <img alt="Gympoint" title="Gympoint" src=".github/logo.png" width="50%" />
+  <img alt="Fastfeet" title="Gympoint" src=".github/logo.png" width="50%" />
 </h1>
 
 <h4 align="center">
@@ -8,7 +8,7 @@
 
 ## 👨🏼‍💻 Projeto
 
-Gympoint is an application that aims to perform gym management. It was the challenge of class 10 of the bootcamp given by Rocketseat. At the time of developing this application, it is no longer a final bootcamp challenge.
+Fastfeet is an application that aims to perform delivery management. It was the challenge of class 10 of the bootcamp given by Rocketseat. At the time of developing this application, it is no longer a final bootcamp challenge.
 
 ## 📝 Licença
 
