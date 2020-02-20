@@ -10,6 +10,7 @@ import UserController from './app/controllers/UserController';
 import RecipientController from './app/controllers/RecipientController';
 import FileController from './app/controllers/FileController';
 import DeliverymanController from './app/controllers/DeliverymanController';
+import DeliveryController from './app/controllers/DeliveryController';
 
 // instances
 const routes = new Router();
@@ -38,5 +39,15 @@ routes.get('/deliveryman', DeliverymanController.index);
 routes.post('/deliveryman', DeliverymanController.store);
 routes.put('/deliveryman/:deliveryman_id', DeliverymanController.update);
 routes.delete('/deliveryman/:deliveryman_id', DeliverymanController.delete);
+
+routes.get('/deliveryman', DeliverymanController.index);
+routes.post('/deliveryman', DeliverymanController.store);
+routes.put('/deliveryman/:deliveryman_id', DeliverymanController.update);
+routes.delete('/deliveryman/:deliveryman_id', DeliverymanController.delete);
+
+routes.get('/delivery', DeliveryController.index);
+routes.post('/delivery', DeliveryController.store);
+routes.put('/delivery/:delivery_id', DeliveryController.update);
+routes.delete('/delivery/:delivery_id', DeliveryController.delete);
 
 export default routes;
