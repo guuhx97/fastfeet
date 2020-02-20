@@ -4,8 +4,8 @@ import Delivery from '../models/Delivery';
 import Recipient from '../models/Recipient';
 import File from '../models/File';
 
-// import DetailMail from '../jobs/DetailMail';
-// import Queue from '../../lib/Queue';
+import DetailMail from '../jobs/DetailMail';
+import Queue from '../../lib/Queue';
 
 class DeliveryController {
   async index(req, res) {
@@ -77,15 +77,15 @@ class DeliveryController {
       return res.status(400).json({ error: 'Deliveryman does not exists' });
     }
 
-    const older = await Delivery.create(req.body);
+    const delivery = await Delivery.create(req.body);
 
-    // await Queue.add(DetailMail.key, {
-    //   older,
-    //   deliveryman,
-    //   recipient,
-    // });
+    await Queue.add(DetailMail.key, {
+      delivery,
+      deliveryman,
+      recipient,
+    });
 
-    return res.json(older);
+    return res.json(delivery);
   }
 
   async update(req, res) {
