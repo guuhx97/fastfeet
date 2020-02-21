@@ -10,7 +10,7 @@
 
 - [Phase One](Challenge01/) :white_check_mark:
 
-- [Phase Two](Challenge02/) :repeat:
+- [Phase Two](Challenge02/) :white_check_mark:
 
 - [Phase Three](Challenge03/) :interrobang:
 
