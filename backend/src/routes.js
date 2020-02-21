@@ -13,6 +13,7 @@ import DeliverymanController from './app/controllers/DeliverymanController';
 import DeliveryController from './app/controllers/DeliveryController';
 import DeliveryCollectController from './app/controllers/DeliveryCollectController';
 import DeliveryDeliverController from './app/controllers/DeliveryDeliverController';
+import DeliveryProblemController from './app/controllers/DeliveryProblemController';
 
 // instances
 const routes = new Router();
@@ -39,6 +40,8 @@ routes.put(
   '/deliveryman/:deliveryman_id/delivery/:delivery_id/deliver',
   DeliveryDeliverController.update
 );
+
+routes.post('/delivery/:delivery_id/problems', DeliveryProblemController.store);
 
 // Routes that require authentication
 routes.use(auth);
@@ -69,5 +72,12 @@ routes.get('/delivery', DeliveryController.index);
 routes.post('/delivery', DeliveryController.store);
 routes.put('/delivery/:delivery_id', DeliveryController.update);
 routes.delete('/delivery/:delivery_id', DeliveryController.delete);
+
+routes.get('/delivery/:delivery_id/problems', DeliveryProblemController.show);
+routes.get('/delivery/problems', DeliveryProblemController.index);
+routes.delete(
+  '/problem/:problem_id/cancel-delivery',
+  DeliveryProblemController.delete
+);
 
 export default routes;
