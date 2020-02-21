@@ -11,6 +11,7 @@ import RecipientController from './app/controllers/RecipientController';
 import FileController from './app/controllers/FileController';
 import DeliverymanController from './app/controllers/DeliverymanController';
 import DeliveryController from './app/controllers/DeliveryController';
+import DeliveryCollectController from './app/controllers/DeliveryCollectController';
 
 // instances
 const routes = new Router();
@@ -19,6 +20,15 @@ const routes = new Router();
 routes.post('/session', SessionController.store);
 
 routes.get('/deliveryman/:id/deliveries', DeliverymanController.show);
+
+routes.get(
+  '/deliveryman/:deliveryman_id/collect',
+  DeliveryCollectController.index
+);
+routes.put(
+  '/deliveryman/:deliveryman_id/delivery/:delivery_id/collect',
+  DeliveryCollectController.update
+);
 
 // Routes that require authentication
 routes.use(auth);
