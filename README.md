@@ -8,7 +8,7 @@
 
 ## 👨🏼‍💻 Projeto
 
-Fastfeet is an application that aims to perform delivery management. It was the challenge of class 10 of the bootcamp given by Rocketseat. At the time of developing this application, it is no longer a final bootcamp challenge.
+Fastfeet is an application for managing deliveries. It is possible to register recipients, couriers and parcels. This is the ultimate challenge for the GoStack 10.0 bootcamp. This application is being developed during the bootcamp.
 
 ## 📝 Licença
 

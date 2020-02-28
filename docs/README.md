@@ -6,12 +6,16 @@
   Final Challenge Bootcamp 10.0 by Rocketseat :memo:
 </h4>
 
+<center>
+
 # :memo: Menu
 
-- [Phase One](Challenge01/) :white_check_mark:
+[Part One](Challenge01/) :white_check_mark:
 
-- [Phase Two](Challenge02/) :white_check_mark:
+[Part Two](Challenge02/) :white_check_mark:
 
-- [Phase Three](Challenge03/) :interrobang:
+[Part Three](Challenge03/) :interrobang:
 
-- [Phase Four](Challenge04/) :interrobang:
+[Part Four](Challenge04/) :interrobang:
+
+</center>
