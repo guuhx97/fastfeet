@@ -1,15 +1,40 @@
 <h1 align="center">
-  <img alt="Fastfeet" title="Gympoint" src=".github/logo.png" width="50%" />
+  <img alt="Fastfeet" title="FastFeet" src=".github/logo.png" width="50%" />
 </h1>
 
 <h4 align="center">
-  Final Challenge Bootcamp 10.0 by Rocketseat
+  Desafio Final Bootcamp 10.0 by Rocketseat
 </h4>
 
 ## 👨🏼‍💻 Projeto
 
-Fastfeet is an application for managing deliveries. It is possible to register recipients, couriers and parcels. This is the ultimate challenge for the GoStack 10.0 bootcamp. This application is being developed during the bootcamp.
+O FastFeet é uma aplicação para o gerenciamento de entregas. Nela é possível cadastrar as encomendas com destinatário e definir o entregador. Pode ser utilizada pelas administradoras da empresa de entrega e também pelo entregador. Foi desenvolvida durante para ser entregue como desafio final do Bootcamp GoStack 10.0 da Rocketseat.
+
+## 🔨 Tecnologias
+
+- JavaScript
+- NodeJs
+- ReactJs
+- React Native
+- Docker
+- Postgres
+- Redis
+
+## 🔄 Executar
+
+No momento, a aplicação está somente com o back-end da aplicação finalizada. O front-end e a aplicação mobile estão em fase de desenvolvimento.
+
+### 🔧 Back-end
+ - Fazer clone do projeto;
+ - Entrar na pasta backend;
+ - Executar `yarn install` para instalar dependências  do projeto;
+ - Executar `yarn dev` para que o projeto seja executado;
+
+### 💻 Front-end
+  - Em desenvolvimento
+
+### 📱 Mobile
+  - Em desenvolvimento
 
 ## 📝 Licença
-
-This project is under the MIT license. See the file [LICENSE](LICENSE.md) for more details.
+Este projeto está sobre a licença MIT. Veja o arquivo [LICENSE](LICENSE.md) para mais detalhes.
