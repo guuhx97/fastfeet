@@ -1,14 +1,13 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import logo from '~/assets/fastfeet-logo.png';
+import { Container, Content, Logout, Profile, User } from './styles';
 
-import { Container, Content, Profile, User, Logout } from './styles';
-import logo from '../../assets/fastfeet-logo.png'
 function Header() {
   return (
     <Container>
       <Content>
         <nav>
-          <img src={logo} alt="FastFeet"/>
+          <img src={logo} alt="FastFeet" />
           <a href="/encomenda">ENCOMENDAS</a>
           <a href="/encomenda">ENTREGADORES</a>
           <a href="/encomenda">DESTINATÁRIOS</a>
