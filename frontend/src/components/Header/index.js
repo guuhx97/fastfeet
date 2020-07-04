@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import logo from '~/assets/fastfeet-logo.png';
 import { Container, Content, Logout, Profile, User } from './styles';
 
@@ -8,10 +9,10 @@ function Header() {
       <Content>
         <nav>
           <img src={logo} alt="FastFeet" />
-          <a href="/encomenda">ENCOMENDAS</a>
-          <a href="/encomenda">ENTREGADORES</a>
-          <a href="/encomenda">DESTINATÁRIOS</a>
-          <a href="/encomenda">PROBLEMAS</a>
+          <Link to="/delivery">ENCOMENDAS</Link>
+          <Link to="/deliveryman">ENTREGADORES</Link>
+          <Link to="/recipient">DESTINATÁRIOS</Link>
+          <Link to="/problem">PROBLEMAS</Link>
         </nav>
         <aside>
           <Profile>
