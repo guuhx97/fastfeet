@@ -1,11 +1,6 @@
 import { darken } from 'polished';
 import styled from 'styled-components';
 
-export const Container = styled.div`
-  width: 70%;
-  margin: 50px auto;
-`;
-
 export const Title = styled.h1`
   font-size: 28px;
   font-weight: bold;
@@ -13,9 +8,61 @@ export const Title = styled.h1`
   color: #666;
 `;
 
+export const Container = styled.div`
+  width: 70%;
+  margin: 50px auto;
+
+  ul {
+    list-style: none;
+
+    section {
+      display: grid;
+      grid-gap: 10px;
+      grid-template-columns: 0.5fr 1fr 1fr 1fr 1fr 1fr 40px;
+      padding: 0 20px;
+      margin-bottom: 5px;
+
+      h1 {
+        font-size: 15px;
+        font-weight: bold;
+        color: #666;
+      }
+    }
+
+    li {
+      padding: 0 15px;
+      align-items: center;
+      margin-bottom: 15px;
+      display: grid;
+      grid-gap: 10px;
+      grid-template-columns: 0.5fr 1fr 1fr 1fr 1fr 1fr 40px;
+      height: 64px;
+      background: #fff;
+
+      span {
+        font-size: 14px;
+        color: #666;
+      }
+
+      button {
+        border: none;
+        margin-left: 5px;
+        background: #fff;
+        div {
+          display: flex;
+          align-items: center;
+          a svg {
+            margin-right: 1px;
+          }
+        }
+      }
+    }
+  }
+`;
+
 export const Tools = styled.div`
   width: 100%;
-  margin: 50px auto;
+  margin: 50px auto 20px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -24,6 +71,7 @@ export const Tools = styled.div`
     display: flex;
     align-items: center;
     border: 1px #ddd solid;
+    background: #fff;
     border-radius: 5px;
     width: 250px;
     padding: 0px 10px;
