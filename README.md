@@ -31,10 +31,10 @@ No momento, a aplicação está somente com o back-end da aplicação finalizada
  - Executar `yarn dev` para que o projeto seja executado;
 
 ### 💻 Front-end
-  - Em desenvolvimento
+  - Não iniciado
 
 ### 📱 Mobile
-  - Em desenvolvimento
+  - Não iniciado
 
 ## 📝 Licença
 Este projeto está sobre a licença MIT. Veja o arquivo [LICENSE](LICENSE.md) para mais detalhes.
